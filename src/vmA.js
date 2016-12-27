@@ -1,9 +1,13 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
-var vmA = Vue.component('my-component', {
-  created () {
-    console.log('test')
+const vmA = Vue.component('my-component', {
+
+  template: '<div>A custom component!</div>',
+  methods: {
+    created() {
+      console.log('test');
+    }
   }
 });
 
-export default vmA
+export default vmA;
