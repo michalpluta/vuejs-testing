@@ -1,5 +1,9 @@
 import Vue from 'vue';
-import vmA from './vmA';
+
+import App from './App.vue';
+import Hello from './app/Hello.vue';
+import Home from './app/Home.vue';
+import Login from './app/Login.vue';
 
 import './index.scss';
 import VueRouter from 'vue-router';
@@ -8,19 +12,25 @@ import VueResource from 'vue-resource';
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-Vue.component('my-component', vmA);
-
 const routes = [
-  {path: '/test', component: vmA}
+  {path: '/', component: Home},
+  {path: '/hello', component: Hello},
+  {path: '/login', component: Login, logged: false}
 ];
 
 const router = new VueRouter({
   routes
 });
 
+// export default new Vue({
+//   el: '#root',
+//   router,
+//   render: h => h('router-view')
+// });
+
 export default new Vue({
-  el: '#app',
   router,
-  template: '<app/>',
-  components: {vmA}
+  el: '#app',
+  template: '<App/>',
+  components: {App}
 });
