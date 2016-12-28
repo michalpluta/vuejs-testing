@@ -12,18 +12,16 @@
     </form>
   </div>
 
-
 </template>
 
 <script>
 
     export default{
-    data(){
-            return{
-                msg:'login vue',
-                logged: false
-            }
+      data(){
+        return{
+            msg:'login vue'
         }
-
+      }
     }
+
 </script>
